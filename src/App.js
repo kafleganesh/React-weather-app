@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './Mycss.css';
 import Title from './Componetnts/Title';
 import Form from './Componetnts/Form';
 import Weather from './Componetnts/Weather';
@@ -48,8 +49,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Title/>
-        <Form  getWeather = {this.getWeather}/>
+        <div className = "container">
+          <div className = "row">
+            <div className = "col-sm-5  title-container">
+            <Title/>
+            </div>
+            <div className = "col-sm-7 weather-container">
+            <Form  getWeather = {this.getWeather}/>
         <Weather 
             temperature = {this.state.temperature}
             city = {this.state.city}
@@ -58,6 +64,9 @@ class App extends Component {
             error = {this.state.error}
             description = {this.state.description} 
         />
+            </div>
+          </div>       
+        </div>     
       </div>
     );
   }
